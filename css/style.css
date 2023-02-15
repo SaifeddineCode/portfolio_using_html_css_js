@@ -1,0 +1,768 @@
+/*Varibales*/
+
+:root{
+    --main-color :#9c27b0;
+}
+
+/* General settings*/
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Open Sans",sans-serif;
+    background-color: #1d1d1d;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+ul{
+    list-style: none;
+}
+
+
+.center_flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*##########################################*/
+.order{
+    display: grid;
+    grid-template-columns: 10% 90%;
+    position:relative;
+}
+
+
+/*Mobile */
+
+@media (max-width : 1100px){
+    .order{
+        display: block !important;
+        position: relative;
+    }
+}
+
+
+
+
+/*Small Screens*/
+
+@media (min-width:768px) and (max-width:991px){
+
+}
+
+/* Medium Screens*/
+
+@media (mix-width:992px){
+
+}
+
+/*Large Screens*/
+
+@media (min-width:1200px){
+
+}
+
+
+
+/*##########################################*/
+/*Starting header*/
+
+.burger-menu{
+    position: absolute;
+    right: 22px;
+    top: 22px;
+    background-color: unset;
+    cursor: pointer;
+    width: 31px;
+    height: 15px;
+    display: none;
+}
+
+.firstLine{
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: lightgray;
+}
+
+.secondLine{
+    position: absolute;
+    top: 7px;
+    width: 30px;
+    height: 2px;
+    background-color: lightgray;
+}
+
+.thirdLine{
+    position: absolute;
+    top: 14px;
+    width: 30px;
+    height: 2px;
+    background-color: lightgray;
+}
+
+header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 130px;
+    height: 100vh;
+    background-color: #131313;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+
+/*responsiveness */
+
+@media (max-width : 1100px){
+    header{
+        width: 35%;
+        height: 100vh;
+        position: absolute !important;
+        top: 0px;
+        left: unset;
+        right: 0px !important;
+        grid-column-start: none;
+        grid-column-end: none;
+        background-color: unset;
+        z-index: 99999;
+    }
+}
+
+
+@media (max-width:1100px){
+    .burger-menu{
+        display: block;
+    }
+}
+
+
+@media (max-width : 1100px){
+    .header_section{
+        height: 100vh;
+        justify-content: start !important;
+        background-color: black;
+        transform: rotateY(-90deg);
+        transform-origin: right
+    }
+}
+
+.showHeader{
+    transform: rotateY(0deg);
+}
+
+/* @media (max-width : 1100px){
+    .social_media{
+        display: none;
+    }
+} */
+
+
+
+
+.header_section {
+    flex-direction: column;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+.header_section .name{
+    flex-direction: column;
+    width: 100%;
+    background-color: black;
+    padding: 20px 0px;
+}
+
+.name h1{
+    color: white;
+    margin: 20px 0px;
+}
+.name h1::first-letter{
+    color: var(--main-color);
+}
+
+
+.name h1 a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.name span{
+    color: gray;
+    font-size: 13px;
+    font-family: serif;
+}
+
+
+.nav_bar {
+    width: 100%;
+    border-bottom: 1px solid #1c1c1c;
+    margin: 13px 0px;
+}
+
+.nav_bar ul{
+    flex-direction: column;
+    width: 100%;
+}
+.nav_bar ul li a{
+    text-decoration: none;
+    color:lightgray;
+}
+
+.nav_bar ul li {
+    width: 100%;
+    padding: 15px;
+    color: lightgray;
+    border-top: 1px solid #1c1c1c;
+    text-align: center;
+    cursor: pointer;
+}
+
+.nav_bar ul li a:hover{
+    color: var(--main-color);
+}
+
+.social_media{
+    justify-content: space-between !important;
+    
+}
+.social_media a i{
+    color: gray;
+}
+
+.social_media a i:hover{
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+.social_media .linkedin{
+    position: relative;
+    width: 20px;
+    height: 50px;
+    background-color: #0072b1;
+    margin-top: 40px;
+}
+.social_media .linkedin .point {
+    position: absolute;
+    top: -40px;
+    left: 3%;
+    width:20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #0072b1;
+    animation-name:pointanimation ;
+    animation-duration: .7s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes pointanimation{
+    from{
+        top: -40px;
+    }
+
+    to{
+        top:-28px;
+    }
+}
+
+/*###########################################*/
+/*###########################################*/
+/*Starting main section*/
+
+main{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    width: 100%;
+}
+.main_section{
+    width: 100%;
+}
+section {
+    /* margin: 20px 0px; */
+    border-bottom: 2px solid gray;
+    /* width:89vw; */
+    /* height: 100vh; */
+    /* height: 100vh; */
+    padding: 25px 0px;
+}
+.present_page {
+    user-select: none;
+    padding: 0px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+@media (max-width : 1100px){
+    .present_page{
+        flex-direction: column;
+    }
+}
+
+.present_page h1 {
+    font-size: 80px;
+    color: white;
+    margin: 20px 0px;
+}
+
+
+/*Mobile */
+
+@media (max-width : 640px){
+    .present_page h1 {
+        font-size: 50px !important;
+    }
+}
+
+@media (min-width : 768px){
+    .present_page h1 {
+        font-size: 87px !important;
+    }
+}
+
+
+
+.present_page .scrollMouse{
+    width: 150px;
+    height: 200px;
+    border: 2px solid gray;
+    border-radius: 80px;
+    position: relative;
+}
+
+.present_page .scrollMouse::before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    width: 2px;
+    height: 50%;
+    background-color: gray;
+}
+
+
+.present_page .scrollMouse::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    height: 2px;
+    width:100%;
+    background-color: gray;
+}
+
+.present_page .scrollMouse .point {
+    position: absolute;
+    top: 2%;
+    left: 41.5%;
+    width:25px;
+    height:50px;
+    /* border :2px solid gray; */
+    border-radius: 30px;
+    background-color: #1c1c1c;
+    animation-name: animOne;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-delay: 1.5s;
+    background-color: var(--main-color);
+}
+
+@keyframes animOne{
+    from{
+        top: 2%;
+    }
+    to{
+        top: 25%;
+    }
+}
+
+/*##############################################*/
+/*##############################################*/
+/*Starting About Section */
+
+.about{
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 50px;
+    width: 100%;
+    height: 100vh;
+}
+
+.about h1{
+    color: var(--main-color);
+    font-size: 50px;
+}
+
+.about p{
+    color: white;
+    margin: 10px 0px;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+/*##############################################*/
+/*##############################################*/
+/*Starting MySkills Section */
+
+.mySkills{
+    width: 100%;
+    flex-direction: column;
+    padding: 0px 40px;
+    height: 100vh;
+}
+
+
+.mySkills .title h1{
+    font-size: 60px;
+    color: var(--main-color);
+}
+
+.mySkills .stack{
+    color: white;
+    width: 44%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+@media (max-width:640px){
+    .mySkills .stack{
+        width: 100%;
+    }
+}
+
+.mySkills .stack .stack-el {
+    margin: 20px 0px;
+    width: 100%;
+}
+.mySkills .stack .stack-el h3{
+    margin: 5px 0px;
+}
+.stack .stack-el .progress{
+    width: 100%;
+    height: 3px;
+    background-color: rgb(86, 86, 86);
+    position: relative;
+}
+
+.stack .stack-el .progress span {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 3px;
+    transition: 1s;
+}
+
+
+.html{
+    background-color: var(--main-color);
+}
+
+.css{
+    background-color: #009688;
+}
+
+.js{
+    background-color: #e91e63;
+}
+
+.scss{
+    background-color: var(--main-color);
+}
+
+
+/*##############################################*/
+/*##############################################*/
+/*Starting Work Section */
+
+.work {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+}
+
+@media (max-width:768px){
+    .work{
+        flex-direction: column;
+        padding:20px 40px ;
+        height: 45rem;
+    }
+}
+
+
+
+ .netflix{
+    position: relative;
+    width: 166px;
+    height: 250px;
+ }
+
+.project{
+    margin: 15px 0px;
+}
+
+.netflix .firstLine{
+    background-color: #e50914ad;
+    width: 50px;
+    height: auto;
+    position: absolute;
+    left: 0px;
+} 
+
+.animationOne{
+    animation-name: anim;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.animationTwo{
+    animation: anim;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-in-out;
+    animation-delay: .5s;
+    animation-fill-mode: forwards;
+    transform: skew(22deg, 0deg);
+}
+.animationThree{
+    animation: anim;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-delay: .5s;
+    animation-fill-mode: forwards;
+}
+
+
+.netflix .secondLine {
+    background-color: #E50914;
+    width: 50px;
+    height: 0px;
+    left: 51px;
+    height: 0px;
+    top: -5px;
+    box-shadow: -1px 1px 14px -2px black;
+}
+
+.netflix .thirdLine {
+    background-color: #e50914ad;
+    width: 50px;
+    height: 0px;
+    position: absolute;
+    left: 101px;
+    top: -5px;
+}
+
+@keyframes anim{
+    from{
+        height: 0px;
+    }
+    to{
+        height :250px;
+    }
+}
+.project .more{
+    position: absolute;
+    width: 100px;
+    height: 92px;
+    text-align: center;
+    background-color: #673ab7;
+    color: white;
+    border-radius: 50%;
+    padding-top: 22px;
+    display: none;
+    cursor: pointer;
+}
+.project .more a{
+    text-decoration: none;
+    color: white;
+}
+
+.project:hover .more {
+    display: block;
+}
+
+.youtube {
+    background-color: #FF0000;
+    width: 150px;
+    height: 120px;
+    border-radius: 60% / 9%;
+    position: relative;
+    
+}
+.youtube::before{
+    content: "";
+    background-color: #FF0000;
+    position: absolute;
+    top: 7%;
+    bottom: 7%;
+    left: -9.5%;
+    right: -9.5%;
+    border-radius: 9% / 50%;
+}
+
+.youtube .play {
+    position: absolute;
+    top: 12%;
+    left: 41%;
+    border: 45px solid white;
+    border-color: transparent transparent transparent white;
+
+}
+.youtube .more {
+    left: 24%;
+    margin-top: 13px;
+}
+
+.playanimation{
+    transition: 1s;
+    animation-name: animationTwo;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+
+
+@keyframes animationTwo{
+    0%{
+        top: 12%;
+        left: 41%;
+    }
+    20%{
+        /* top: 12%;
+        left: 110%; */
+        top: 12%;
+        left: 41%;
+        transform: rotate(180deg);
+    }
+    40%{
+        /* top: -80%;
+        left: 110%; */
+        top: 12%;
+        left: 0%;
+        transform: rotate(180deg);
+    }
+    60%{
+        /* top: -80%;
+        left: -20%; */
+        top: 12%;
+        left: 0%;
+        transform: rotate(360deg);
+    }
+    80%{
+        /* top: 12%;
+        left: -24%; */
+        top: 12%;
+        left: 80%;
+        transform: rotate(360deg);
+    }
+    100%{
+        /* top: 12%;
+        left: 41%; */
+        top: 12%;
+        left: 41%;
+        transform: rotate(360deg);
+    }
+}
+
+.twitter {
+    background-color: #00acee;
+    width: 250px;
+    height: 250px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.twitter img{
+    width: 100px;
+    position: absolute;
+    top: 28%;
+    left: 30%;
+}
+
+.twitter .note {
+    position: absolute;
+    top: 21%;
+    left: 67%;
+}
+
+.twitanim{
+    animation-name: twitanim;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+}
+
+.twitter .note img {
+    width: 20px;
+}
+
+
+
+@keyframes twitanim {
+    0%{
+        top: 21%;
+        left: 67%;
+    }
+    20%{
+        top: 10%;
+        left: 80%;
+    }
+    40%{
+        top: 5%;
+        left: 40%;
+    }
+    60%{
+        top: 20%;
+        left: 70%;
+    }
+    80%{
+        top: 15%;
+        left: 40%;
+    }
+    100%{
+        top: -20%;
+        left: 110%;
+    }
+}
+
+.twitter .more {
+    left: 30%;
+    top: 27%;
+}
+
+
+.toTop{
+    position: fixed;
+    border-color: transparent transparent purple transparent;
+    right: 20px;
+    bottom: 20px;
+    border-style: solid;
+    border-width: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+
+.overflowHidden{
+    overflow: hidden;
+}
